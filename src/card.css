@@ -1,0 +1,25 @@
+    /* src/components/Card.css */
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin: 16px;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 300px; /* Ancho de ejemplo */
+    }
+
+    .card-header {
+      margin-bottom: 8px;
+    }
+
+    .card-content img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 8px;
+    }
+
+    .card-footer {
+      margin-top: 16px;
+      font-size: 0.9em;
+      color: #555;
+    }

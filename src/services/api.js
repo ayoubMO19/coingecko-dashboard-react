@@ -18,7 +18,13 @@ api.interceptors.request.use(config => {
 export const login = (username, password) =>
   api.post("/login/login", { username, password });
 
+export const getGlobalInfo = () =>
+  api.get("/global/global");
+
 export const getTopTenCoins = () =>
   api.get("/coins/top-ten-coins");
+
+export const getCoinDetails = (coinId) =>
+  api.get(`/coins/get-coin-details?coinId=${coinId}`);
 
 export default api;
