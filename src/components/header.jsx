@@ -1,4 +1,4 @@
-import logo from '../assets/logo-vexa.png'; // Ajusta la ruta a tu logo PNG
+import logo from '../assets/logo-vexa.png';
 
 function Menu() {
   return (

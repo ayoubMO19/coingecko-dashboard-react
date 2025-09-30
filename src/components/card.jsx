@@ -4,14 +4,13 @@ function Card(props) {
     return (
     <div className="card">
         <div className="card-header">
-        <h3>{props.title}</h3>
+            <h3>{props.title}</h3>
         </div>
         <div className="card-content">
-        <p>{props.description}</p>
-        {props.image && <img src={props.image} alt="Imagen de la tarjeta" />}
+            {props.image && <img src={props.image} alt="Imagen de la tarjeta" />}
         </div>
         <div className="card-footer">
-        {props.children} {/* Permite pasar elementos hijo */}
+            <h4>{props.data}</h4>
         </div>
     </div>
     );
