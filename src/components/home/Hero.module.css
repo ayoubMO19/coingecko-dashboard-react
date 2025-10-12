@@ -1,15 +1,35 @@
 .container {
+    border: solid red;
     height: 80%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: transparent;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-.title {
+.subContainer {
+    border: solid yellow;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.titleContainer h1 {
+    width: 100%;
+    border: solid rgb(162, 0, 255);
     color: #58DF30;
-    font-size: 100px;
+    font-size: 70px;
     font-weight: 800;
     text-align: center;
     text-shadow:
@@ -20,34 +40,40 @@
         0 0 80px #000000;
 }
 
-.buttonsCointainer{
+.accessContainer{
+    border: solid blue;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
+    height: 80%;
 }
 
-.buttonsCointainer button{
-    font-size: 18px;
+.accessContainer button{
+    font-size: 14px;
     font-family: 'Montserrat';
     font-weight: 600;
-    border: solid #58DF30 2px;
+    border: none;
     border-radius: 30px;
     color: white;
-    background-color: #000000;
-    width: 170px;
-    height: 50px;
+    background-color: #58DF30;
+    width: 120px;
+    height: 40px;
     padding: 5px;
     margin: 10px;
 }
 
-.buttonsCointainer button:hover{
+.accessContainer button:hover{
     background-color: #58DF30;
     transition: 200ms;
     box-shadow:
-        0 0 5px #000000,  /* Sombra principal para el brillo */
+        0 0 5px #58DF30,  /* Sombra principal para el brillo */
         0 0 10px #58DF30,
-        0 0 20px #000000,
+        0 0 20px #58DF30,
         0 0 40px #58DF30, /* Resplandor de color neón */
-        0 0 80px #000000;
+        0 0 80px #58DF30;
 }
