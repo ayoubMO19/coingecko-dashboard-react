@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 const Header = () => {
     return (
         <div className={styles.container}>
-            <h1>This is the HEADER</h1>
+            <h1 className={styles.logo}>VEXA</h1>
         </div>
     )
 }

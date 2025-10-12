@@ -1,7 +1,53 @@
 .container {
     height: 80%;
-    border: solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.title {
+    color: #58DF30;
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    text-shadow:
+        0 0 5px #000000,  /* Sombra principal para el brillo */
+        0 0 10px #58DF30,
+        0 0 20px #000000,
+        0 0 40px #58DF30, /* Resplandor de color neón */
+        0 0 80px #000000;
+}
+
+.buttonsCointainer{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.buttonsCointainer button{
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    border: solid #58DF30 2px;
+    border-radius: 30px;
+    color: white;
+    background-color: #000000;
+    width: 170px;
+    height: 50px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.buttonsCointainer button:hover{
+    background-color: #58DF30;
+    transition: 200ms;
+    box-shadow:
+        0 0 5px #000000,  /* Sombra principal para el brillo */
+        0 0 10px #58DF30,
+        0 0 20px #000000,
+        0 0 40px #58DF30, /* Resplandor de color neón */
+        0 0 80px #000000;
 }

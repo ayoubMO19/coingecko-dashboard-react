@@ -1,7 +1,44 @@
 .container {
-    border: solid green;
     height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+}
+
+.container h1 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.container a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+
+.container a:hover{
+    color: #58DF30;
+    text-shadow:
+        0 0 5px #58DF30,  /* Sombra principal para el brillo */
+        0 0 10px #58DF30,
+        0 0 20px #58DF30,
+        0 0 40px #58DF30, /* Resplandor de color neón */
+        0 0 80px #58DF30;
+}
+
+.githubContainer, .linkedinContainer{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.githubContainer img, .linkedinContainer img {
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 10px;
 }

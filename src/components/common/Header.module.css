@@ -1,7 +1,19 @@
 .container {
-    border: solid blue;
     height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    color: #58DF30;
+    text-shadow:
+        0 0 5px #000000,  /* Sombra principal para el brillo */
+        0 0 10px #58DF30,
+        0 0 20px #000000,
+        0 0 40px #58DF30, /* Resplandor de color neón */
+        0 0 80px #000000;
 }
