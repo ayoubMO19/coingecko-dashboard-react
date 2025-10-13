@@ -1,17 +1,16 @@
 .container {
-    border: solid red;
     height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .subContainer {
-    border: solid yellow;
-    background-color: #000000;
+    background: #000000;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 1) 15%, rgba(88, 223, 48, 1) 100%, rgba(88, 223, 48, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,18 +19,26 @@
 
 .titleContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 55%;
+    padding: 30px;
 }
 
 .titleContainer h1 {
     width: 100%;
-    border: solid rgb(162, 0, 255);
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.titleContainer strong {
+    width: 100%;
     color: #58DF30;
-    font-size: 70px;
-    font-weight: 800;
-    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
     text-shadow:
         0 0 5px #000000,  /* Sombra principal para el brillo */
         0 0 10px #58DF30,
@@ -40,40 +47,134 @@
         0 0 80px #000000;
 }
 
+.titleContainer h2 {
+    width: 100%;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.titleContainer p {
+    padding-top: 30px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 200;
+    margin: 0;
+}
+
+/* Estilos para la sección deformulario */
+
 .accessContainer{
-    border: solid blue;
-    border-radius: 15px;
     background-color: white;
     color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 80%;
+    width: 45%;
+    height: 100%;
 }
 
-.accessContainer button{
+.accessTitle, .accessInputs, .accessButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.accessTitle {
+    align-items: end;
+    padding: 0;
+}
+
+.accessInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 0;
+}
+
+.accessInput {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-bottom: 12px;
+}
+
+.accessInput span {
+    font-size: 15px;
+    color: #232323;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.accessInput input {
+    border: 1.5px solid #46b531;
+    background: #f8f8f8;
+    border-radius: 5px;
+    padding: 10px 14px;
     font-size: 14px;
-    font-family: 'Montserrat';
+    color: #2b2b2b;
+    outline: none;
+    box-shadow: 0 2px 12px rgba(34, 34, 34, 0.07);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.accessInput input:focus {
+    border-color: #1e871b;
+    box-shadow: 0 4px 16px rgba(88, 223, 48, 0.14);
+    background: #fff;
+}
+
+.accessInput input::placeholder {
+    color: #a7a7a7;
+    opacity: 1;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+}
+
+.accessButton {
+    align-items: center;
+    justify-content: center;
+    gap: 30px
+}
+
+.accessButton button {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     border: none;
-    border-radius: 30px;
     color: white;
-    background-color: #58DF30;
-    width: 120px;
+    background-color: #52cc2d; /* Verde profesional, menos saturado que #58DF30 */
+    width: 130px;
     height: 40px;
-    padding: 5px;
-    margin: 10px;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Sombra suave para dar profundidad */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.accessContainer button:hover{
-    background-color: #58DF30;
-    transition: 200ms;
-    box-shadow:
-        0 0 5px #58DF30,  /* Sombra principal para el brillo */
-        0 0 10px #58DF30,
-        0 0 20px #58DF30,
-        0 0 40px #58DF30, /* Resplandor de color neón */
-        0 0 80px #58DF30;
+.accessButton button:hover {
+    background-color: #45a045; /* Verde más oscuro y sobrio para hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra ligeramente más intensa */
+}
+
+.accessButton span {
+    font-size: 12px;
+}
+
+.accessButton a {
+    font-size: 12px;
+    font-weight: 700; 
+    color: #58DF30;
+    text-decoration: none;
+}
+
+.accessButton a:hover {
+    font-size: 12px;
+    font-weight: 700; 
+    color: #50c72c
 }

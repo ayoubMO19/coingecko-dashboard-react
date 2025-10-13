@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-background: radial-gradient(circle at 0% -20%, #13a706, #0a7603, #044901, #012000, #000200, #000200, #002008, #004a1b, #007830, #00a947);
+    background: radial-gradient(circle at 0% -20%, #13a706, #0a7603, #044901, #012000, #000200, #000200, #002008, #004a1b, #007830, #00a947);
     font-family: 'Montserrat';
     color: white
 }
