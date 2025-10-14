@@ -9,12 +9,18 @@
 }
 
 .subContainer {
-    background: #000000;
-    background: linear-gradient(90deg,rgba(0, 0, 0, 1) 15%, rgba(88, 223, 48, 1) 100%, rgba(88, 223, 48, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 80%;
+    min-width: 100%;
+    box-shadow:
+        0 0 5px #000000,  /* Sombra principal para el brillo */
+        0 0 10px #58DF30,
+        0 0 20px #000000,
+        0 0 40px #58DF30, /* Resplandor de color neón */
+        0 0 80px #000000;
 }
 
 .titleContainer {
@@ -22,8 +28,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 55%;
-    padding: 30px;
+    width: 70%;
+    height: 100%;
+    padding: 0 30px 0 30px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/home-container-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .titleContainer h1 {

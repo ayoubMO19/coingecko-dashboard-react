@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
+    "appwrite": "^21.2.1",
     "axios": "^1.12.2",
     "dotenv": "^17.2.2",
     "node": "^24.8.0",
