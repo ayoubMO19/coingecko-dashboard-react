@@ -1,45 +1,54 @@
 import { useState  } from 'react';
 import commonStyles from '../../Global.module.css';
 import styles from './Hero.module.css';
-import { registerNewUser } from '../../appwrite.js';
+import { registerNewUser, loginUser  } from '../../appwrite.js';
 
 const Hero = () => {
     const [isRegistering, setIsRegistering] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
-    username: '',
     email: '',
     password: '',
     confirmPassword: ''
     });
+    
+    const { email, password, confirmPassword } = formData;
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    const handleSubmit = (e) => {
         if (isRegistering) {
             // Comprobar si ambos passwords son correctos
             if (password != confirmPassword) {
-                console.log('Confirm Password no es igual al Password introducido')
                 setErrorMessage('Confirm Password no es igual al Password introducido')
                 return
             }
             setErrorMessage('')
-            registerNewUser();
-            console.log('Intentando registro con:', formData);
+
+            const response = await registerNewUser(formData);
+            if (response.success) {
+                setIsRegistering(false); // vuelve al modo login
+                // TODO: alerta de usuario logueado con éxito
+            } else {
+                // TODO: alerta de usuario existente
+            }
         } else {
-            console.log('Intentando login con:', formData);
+            const response = await loginUser(formData);
+            if (response.success) {
+                window.location.href = '/dashboard'; // redirigir al dashboard
+            } else {
+                // TODO: Alerta de login incorrecto
+            }
         }
     };
 
     const cleanInputs = () => {
         setFormData({
-            username: '',
             email: '',
             password: '',
             confirmPassword: ''
         });
     }
-
-    const { username, email, password, confirmPassword } = formData;
 
     return (
         <div className={styles.container}>
@@ -64,22 +73,9 @@ const Hero = () => {
                     <div className={styles.accessTitle}>
                         <h1>{isRegistering ? 'User Register' : 'User Login'}</h1>
                     </div>
-
                     <form className={styles.accessForm} onSubmit={handleSubmit}>
-                        <div className={styles.accessInputs}>
+                        <div className={styles.accessInputs}>                        
                             <div className={styles.accessInput}>
-                                <span>Username</span>
-                                <input 
-                                    value={username}
-                                    onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                                    placeholder='Input your Username' 
-                                    type="text"
-                                    required
-                                />
-                            </div>
-                            
-                            {isRegistering && (
-                                <div className={styles.accessInput}>
                                 <span>Email</span>
                                 <input
                                     value={email}
@@ -90,9 +86,7 @@ const Hero = () => {
                                     type="email"
                                     required
                                 />
-                                </div>
-                            )}
-                           
+                            </div>                        
                             <div className={styles.accessInput}>
                                 <span>Password</span>
                                 <input
@@ -102,8 +96,7 @@ const Hero = () => {
                                     type='password' 
                                     required
                                 />
-                            </div>
-                            
+                            </div> 
                             {isRegistering && (
                                 <div className={styles.accessInput}>
                                     <span>Confirm Password</span>
@@ -121,13 +114,12 @@ const Hero = () => {
                                     />
                                     {errorMessage && (
                                         <div className={commonStyles.alertError}>
-                                            El campo es obligatorio.
+                                            {errorMessage}
                                         </div>                                
                                     )}
                                 </div>
                             )}
                         </div>
-
                         <div className={styles.accessButton}>
                             <span>
                                 {isRegistering ? (
