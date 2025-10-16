@@ -1,44 +1,84 @@
-import { useState  } from 'react';
+import { useState } from 'react';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 import commonStyles from '../../Global.module.css';
 import styles from './Hero.module.css';
-import { registerNewUser, loginUser  } from '../../appwrite.js';
+import { registerNewUser, loginUser, getCurrentUser } from '../../appwrite.js';
 
 const Hero = () => {
     const [isRegistering, setIsRegistering] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
     email: '',
     password: '',
     confirmPassword: ''
     });
-    
+
+    // Mensajes de alertas
+    const notify = async (type, message) => {
+        const config = {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        }
+
+        if (type === 'error') toast.error(message, config);
+        if (type === 'success') toast.success(message, config);
+    }
+
+
     const { email, password, confirmPassword } = formData;
 
+    // Procesar submit de formulario
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Flujo de registro
         if (isRegistering) {
-            // Comprobar si ambos passwords son correctos
+            // si confirm password no es igual a password se notifica y termian el proceso
             if (password != confirmPassword) {
-                setErrorMessage('Confirm Password no es igual al Password introducido')
+                notify('error', 'Confirm Password no es igual a Password. Compruebe los datos porfavor.');
                 return
             }
-            setErrorMessage('')
 
+            // Registramos el nuevo usaurio
             const response = await registerNewUser(formData);
             if (response.success) {
                 setIsRegistering(false); // vuelve al modo login
-                // TODO: alerta de usuario logueado con éxito
+                // alerta de usuario logueado con éxito
+                await notify('success', 'Usuario registrado con éxito. Ya puede loguearse.');
             } else {
-                // TODO: alerta de usuario existente
+                // alerta de usuario existente
+                await notify('error', 'El usuario ya existe. Utilice otro correo o utilice el formulario de Login.');
             }
+        // Flujo de login
         } else {
             const response = await loginUser(formData);
+
             if (response.success) {
-                window.location.href = '/dashboard'; // redirigir al dashboard
-            } else {
-                // TODO: Alerta de login incorrecto
+                // alerta de usuario logueado con éxito
+                await notify('success', 'Usuario logueado con éxito.');
+                // redirigir al dashboard
+                setTimeout(() => { window.location.href = '/dashboard' }, 800);
             }
+            
+            if (response?.error?.code === 401) {
+                const result = await getCurrentUser();
+
+                if (result.success) {
+                    await notify('success', 'Usuario logueado con éxito.');
+                    // redirigir al dashboard
+                    setTimeout(() => { window.location.href = '/dashboard' }, 800);
+                    return;
+                }
+            }
+
+            // Alerta de login incorrecto
+            await notify('error', 'Email o Password incorrectos. Inténtelo de nuevo.');
         }
     };
 
@@ -112,11 +152,6 @@ const Hero = () => {
                                         type="password"
                                         required
                                     />
-                                    {errorMessage && (
-                                        <div className={commonStyles.alertError}>
-                                            {errorMessage}
-                                        </div>                                
-                                    )}
                                 </div>
                             )}
                         </div>
@@ -157,6 +192,7 @@ const Hero = () => {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }
