@@ -1,44 +1,54 @@
 .container {
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: white;
 }
 
-.container h1 {
-    font-size: 20px;
-    font-weight: 400;
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 
-.container a{
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+.link img {
+  width: 28px;
+  filter: grayscale(100%) brightness(0.8);
+  transition: all 0.3s ease-in-out;
 }
 
-
-.container a:hover{
-    color: #58DF30;
-    text-shadow:
-        0 0 5px #58DF30,  /* Sombra principal para el brillo */
-        0 0 10px #58DF30,
-        0 0 20px #58DF30,
-        0 0 40px #58DF30, /* Resplandor de color neón */
-        0 0 80px #58DF30;
+.link:hover {
+  color: #58DF30;
+  text-shadow: 0 0 10px #58DF30, 0 0 30px #58DF30;
 }
 
-.githubContainer, .linkedinContainer{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.link:hover img {
+  filter: drop-shadow(0 0 6px #58DF30) brightness(1);
 }
 
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 20px 0;
+  }
 
-.githubContainer img, .linkedinContainer img {
-    width: 40px;
-    margin-right: 20px;
-    border-radius: 10px;
+  .link {
+    font-size: 14px;
+  }
+
+  .link img {
+    width: 22px;
+  }
 }

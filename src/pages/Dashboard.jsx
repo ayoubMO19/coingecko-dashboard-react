@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { account } from '../appwrite';
+import { logoutUser } from '../appwrite';
 
 const Dashbaord = () => {
     useEffect(() => {
@@ -21,6 +22,7 @@ const Dashbaord = () => {
     return (
         <div>
             <h1>Dashboard de VEXA</h1>
+            <button onClick={logoutUser}>Logout</button>
         </div>
     )
 };

@@ -51,9 +51,12 @@ const Hero = () => {
                 setIsRegistering(false); // vuelve al modo login
                 // alerta de usuario logueado con éxito
                 await notify('success', 'Usuario registrado con éxito. Ya puede loguearse.');
-            } else {
+            } else if (response?.error?.code === 409){
                 // alerta de usuario existente
                 await notify('error', 'El usuario ya existe. Utilice otro correo o utilice el formulario de Login.');
+            } else if (response?.error?.code === 400){
+                // alerta de usuario existente
+                await notify('error', 'La contraseña debe contener como mínimo 8 carácteres.');
             }
         // Flujo de login
         } else {
@@ -64,6 +67,7 @@ const Hero = () => {
                 await notify('success', 'Usuario logueado con éxito.');
                 // redirigir al dashboard
                 setTimeout(() => { window.location.href = '/dashboard' }, 800);
+                return;
             }
             
             if (response?.error?.code === 401) {

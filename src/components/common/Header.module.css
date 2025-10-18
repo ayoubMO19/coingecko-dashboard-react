@@ -1,9 +1,10 @@
 .container {
-    height: 10%;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
+    padding: 0 5%;
 }
 
 .logo {
@@ -16,4 +17,10 @@
         0 0 20px #000000,
         0 0 40px #58DF30, /* Resplandor de color neón */
         0 0 80px #000000;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 24px;
+    }
 }

@@ -43,6 +43,7 @@ export const getCurrentUser = async () => {
 export const logoutUser = async () => {
     try {
         await account.deleteSession('current');
+        window.location.href = '/';
         return { success: true };
 
     } catch(error) {
