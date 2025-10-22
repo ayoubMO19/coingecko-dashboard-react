@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { account } from '../appwrite';
 import { logoutUser } from '../appwrite';
+import globalStyles from '../Global.module.css';
+import styles from './Dashboard.module.css';
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
+import Card from '../components/dashboard/Card';
 
 const Dashbaord = () => {
     useEffect(() => {
@@ -20,9 +25,15 @@ const Dashbaord = () => {
 
     
     return (
-        <div>
-            <h1>Dashboard de VEXA</h1>
-            <button onClick={logoutUser}>Logout</button>
+        <div className={styles.dashboard}>
+            <Header />
+            <div className={styles.cardsContainer}>
+                <Card title="Usuarios" value="1,243" description="Usuarios activos" />
+                <Card title="Ventas" value="8,431€" description="Ingresos mensuales" />
+                <Card title="Proyectos" value="27" description="En desarrollo" />
+                <Card title="Proyectos" value="27" description="En desarrollo" />
+            </div>
+            <Footer />
         </div>
     )
 };

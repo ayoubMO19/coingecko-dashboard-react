@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
-import commonStyles from '../../Global.module.css';
 import styles from './Hero.module.css';
 import { registerNewUser, loginUser, getCurrentUser } from '../../appwrite.js';
 
