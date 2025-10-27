@@ -3,13 +3,35 @@
     flex-direction: column;
     padding: 0 2rem;
     min-height: 100vh;
-    background: radial-gradient(circle at 0% -20%, #00b10f, #006d09, #073d00, #000000, #000000, #000000, #000000, #052b00, #003d05, #005e08);
+    background: radial-gradient(circle at 0% -20%, #13a706, #0a7603, #044901, #012000, #000200, #000200, #002008, #004a1b, #007830, #00a947);
     color: #fff;
 }
 
+.container {
+    border: solid blue;
+    min-height: 80vh;
+    display: grid;
+    grid-template-rows: 3fr 7fr; /* cards arriba (30%), graphs abajo (70%) */
+}
+
 .cardsContainer {
+    border: solid red;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    width: 60%;
+}
+
+.graphsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.donutGraphContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid rgb(0, 174, 255);
+    width: 100%;
+    height: 100%;
 }

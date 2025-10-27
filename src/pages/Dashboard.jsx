@@ -6,9 +6,10 @@ import styles from './Dashboard.module.css';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import Card from '../components/dashboard/Card';
+import DonutChart from '../components/dashboard/DonutChart';
 
 const Dashbaord = () => {
-    useEffect(() => {
+    useEffect(() => {    
         // Verifica si hay sesión activa
         const checkSession = async () => {
         try {
@@ -27,11 +28,21 @@ const Dashbaord = () => {
     return (
         <div className={styles.dashboard}>
             <Header />
-            <div className={styles.cardsContainer}>
-                <Card title="Usuarios" value="1,243" description="Usuarios activos" />
-                <Card title="Ventas" value="8,431€" description="Ingresos mensuales" />
-                <Card title="Proyectos" value="27" description="En desarrollo" />
-                <Card title="Proyectos" value="27" description="En desarrollo" />
+            <div className={styles.container}>
+                <div className={styles.cardsContainer}>
+                    <Card title="Criptomonedas" value="1,243" description="Cantidad total de criptomonedas" imgUrl="./crypto-coins-img.jpg" />
+                    <Card title="Market Cap" value="8,431€" description="Capital total del mercado" imgUrl="./market-cap-img.jpg" />
+                    <Card title="Volumen 24h" value="27" description="Volumen de mercado últimas 24h" imgUrl="./volume24h-img.jpg" />
+                    <Card title="Bitcoin" value="27" description="Valor total en mercado" imgUrl="./bitcoin-img.jpg" />
+                </div>
+                <div className={styles.graphsContainer}>
+                    <div className={styles.donutGraphContainer}>
+                        <DonutChart />
+                    </div>
+                    <div className={styles.donutGraphContainer}>
+                        <p>Graph 2</p>
+                    </div>
+                </div>
             </div>
             <Footer />
         </div>
