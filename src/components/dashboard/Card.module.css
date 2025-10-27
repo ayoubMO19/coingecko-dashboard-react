@@ -4,9 +4,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgba(0,0,0,0.6);
+  background-color: #000E11;
   border: 1px solid rgba(0, 255, 150, 0.4);
-  border-radius: 16px;
+  border-radius: 5px;
   padding: 1rem;
   transition: all 0.3s ease;
   width: 80%;
@@ -39,5 +39,6 @@
 /* ---- Responsive ---- */
 @media (max-width: 600px) {
   .card {
+    height: 100px;
   }
 }

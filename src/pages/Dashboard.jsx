@@ -39,7 +39,7 @@ const Dashbaord = () => {
                     <div className={styles.donutGraphContainer}>
                         <DonutChart />
                     </div>
-                    <div className={styles.donutGraphContainer}>
+                    <div className={styles.barGraphContainer}>
                         <p>Graph 2</p>
                     </div>
                 </div>
