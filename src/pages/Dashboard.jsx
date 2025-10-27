@@ -31,9 +31,9 @@ const Dashbaord = () => {
             <div className={styles.container}>
                 <div className={styles.cardsContainer}>
                     <Card title="Criptomonedas" value="1,243" description="Cantidad total de criptomonedas" imgUrl="./crypto-coins-img.jpg" />
-                    <Card title="Market Cap" value="8,431€" description="Capital total del mercado" imgUrl="./market-cap-img.jpg" />
-                    <Card title="Volumen 24h" value="27" description="Volumen de mercado últimas 24h" imgUrl="./volume24h-img.jpg" />
-                    <Card title="Bitcoin" value="27" description="Valor total en mercado" imgUrl="./bitcoin-img.jpg" />
+                    <Card title="Market Cap" value="843,1 M$" description="Capital total del mercado" imgUrl="./market-cap-img.jpg" />
+                    <Card title="Volumen 24h" value="27,0 M$" description="Volumen de mercado últimas 24h" imgUrl="./volume24h-img.jpg" />
+                    <Card title="Bitcoin" value="49,9%" description="Valor total en mercado" imgUrl="./bitcoin-img.jpg" />
                 </div>
                 <div className={styles.graphsContainer}>
                     <div className={styles.donutGraphContainer}>

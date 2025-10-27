@@ -5,12 +5,8 @@ const Card = ({title, value, description}) => {
     
     return (
         <div className={styles.card}>
-            <div>
-                <h3 className={styles.title}>{title}</h3>
-                <p className={styles.value}>{value}</p>
-                <p className={styles.description}>{description}</p>
-            </div>
-
+            <p className={styles.title}>{title}</p>
+            <p className={styles.value}>{value}</p>
         </div>
     )
 }

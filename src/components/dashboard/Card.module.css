@@ -1,24 +1,17 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 150, 0.4);
   border-radius: 16px;
-  padding: 1.8rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-  color: #e0e0e0;
+  padding: 1rem;
   transition: all 0.3s ease;
-  transform: translateY(0);
-}
-
-.card:before {
-  border-radius: 15px;
-	content:'';
-	position: absolute;
-  top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: rgba(0,0,0,0.6);
+  width: 80%;
+  height: 150px;
+  gap: 30px;
 }
 
 .card:hover {
@@ -28,37 +21,23 @@
 }
 
 .title {
-  position: relative;
-  font-size: 1.1rem;
-  color: #58DF30;
+  font-size: 1rem;
+  color: #ffffff;
   font-weight: 600;
-  margin-bottom: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin: 0;
 }
 
 .value {
-  position: relative;
+  margin: 0;
   font-size: 2rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.description {
-  position: relative;
-  font-size: 0.9rem;
-  color: #999;
-}
-
-.card img {
-  width: 200px;
-  border-radius: 5px;
+  color: #53EF8F;
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 600px) {
-  .card img {
-    width: 100px;
+  .card {
   }
 }

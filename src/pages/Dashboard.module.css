@@ -1,37 +1,44 @@
 .dashboard {
     display: flex;
     flex-direction: column;
-    padding: 0 2rem;
     min-height: 100vh;
-    background: radial-gradient(circle at 0% -20%, #13a706, #0a7603, #044901, #012000, #000200, #000200, #002008, #004a1b, #007830, #00a947);
+    background: #00080C;
     color: #fff;
 }
 
 .container {
-    border: solid blue;
+    margin-top: 20px;
     min-height: 80vh;
     display: grid;
+    place-items: center;
     grid-template-rows: 3fr 7fr; /* cards arriba (30%), graphs abajo (70%) */
 }
 
 .cardsContainer {
-    border: solid red;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    width: 60%;
+    width: 70%;
+    place-items: center;
+    gap: 20px;
 }
 
 .graphsContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
 }
 
 .donutGraphContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid rgb(0, 174, 255);
     width: 100%;
     height: 100%;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+    .cardsContainer {
+        width: 100%;
+    }
 }
