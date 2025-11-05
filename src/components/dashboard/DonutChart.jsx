@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import styles from './donutChart.module.css';
@@ -23,14 +23,10 @@ export const data = {
   ],
 };
 
-const donutChart = ({}) => {
-    useEffect(() => {
-        // Preparar la grafica y Cargar datos
-    }, []);
-    
+const donutChart = ({title}) => {    
     return (
         <div className={styles.container}>
-            <h3>Distribución de Marcket Cap</h3>
+            <h3>{title}</h3>
             <Doughnut data={data}/>
         </div>
     )

@@ -7,6 +7,7 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import Card from '../components/dashboard/Card';
 import DonutChart from '../components/dashboard/DonutChart';
+import AreaChart from '../components/dashboard/AreaChart';
 
 const Dashbaord = () => {
     useEffect(() => {    
@@ -15,7 +16,7 @@ const Dashbaord = () => {
         try {
             const session = await account.getSession('current');
             console.log('Usuario logueado:', session);
-        } catch (err) {
+        } catch {
             console.log('No hay sesión, redirigiendo...');
             window.location.href = '/';
         }
@@ -37,10 +38,23 @@ const Dashbaord = () => {
                 </div>
                 <div className={styles.graphsContainer}>
                     <div className={styles.donutGraphContainer}>
-                        <DonutChart />
+                        <DonutChart
+                            title="Distribución de Marcket Cap"
+                        />
                     </div>
                     <div className={styles.barGraphContainer}>
-                        <p>Graph 2</p>
+                        <AreaChart
+                            title="Evolución Market Cap"
+                            data={[
+                                { time: "2025-10-21", value: 24 },
+                                { time: "2025-10-22", value: 31 },
+                                { time: "2025-10-23", value: 29 },
+                                { time: "2025-10-24", value: 33 },
+                                { time: "2025-10-25", value: 40 },
+                                { time: "2025-10-26", value: 34 },
+                                { time: "2025-10-27", value: 45 },
+                            ]}
+                        />                    
                     </div>
                 </div>
             </div>
