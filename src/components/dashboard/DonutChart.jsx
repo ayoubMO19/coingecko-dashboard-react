@@ -3,33 +3,33 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import styles from './donutChart.module.css';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+const DonutChart = ({title, data}) => {   
+  
+  ChartJS.register(ArcElement, Tooltip, Legend);
+  const chartData = {
+    labels: data.names,
+    datasets: [
+      {
+        label: '# of Votes',
+        data: data.values,
+        backgroundColor: [
+          '#25E678',
+          '#1AB25A',
+          '#0A9252',
+          '#00683D',
+          '#005331ff',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 
-export const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
-  datasets: [
-    {
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2],
-      backgroundColor: [
-        '#25E678',
-        '#1AB25A',
-        '#0A9252',
-        '#00683D',
-        '#005331ff',
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
-
-const donutChart = ({title}) => {    
-    return (
-        <div className={styles.container}>
-            <h3>{title}</h3>
-            <Doughnut data={data}/>
-        </div>
-    )
+  return (
+      <div className={styles.container}>
+          <h3>{title}</h3>
+          <Doughnut data={chartData}/>
+      </div>
+  )
 }
 
-export default donutChart;
+export default DonutChart;

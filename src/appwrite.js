@@ -1,6 +1,6 @@
 import { Client, Account, ID } from 'appwrite';
 const PROJECT_ID = import.meta.env.VITE_APPWRITE_PROJECT_ID;
-const ENDPOINT = 'https://cloud.appwrite.io/v1'
+const ENDPOINT = import.meta.env.VITE_APPWRITE_ENDPOINT;
 
 const client = new Client()
     .setEndpoint(ENDPOINT)
@@ -34,7 +34,7 @@ export const getCurrentUser = async () => {
     try {
         const user = await account.get();
         return { success: true, user };
-    } catch(error) {
+    } catch {
         return { success: false, user: null };
     }
 };
