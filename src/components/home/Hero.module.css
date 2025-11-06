@@ -2,73 +2,95 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh; /* ocupa casi toda la pantalla sin chocar con header/footer */
-  padding: 0px 20px 40px;
+  min-height: 80vh;
+  padding: 0 20px 40px;
   box-sizing: border-box;
   color: white;
   background: transparent;
 }
 
+/* Contenedor principal */
 .subContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
+  align-items: stretch;
   gap: 40px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 20px;
+  max-width: 1100px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 40px 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 255, 128, 0.08);
+  transition: all 0.3s ease;
 }
 
 /* ----- TEXT SECTION ----- */
 .titleContainer {
-  flex: 1;
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-right: 40px;
 }
 
 .titleContainer h1 {
   font-size: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.titleContainer strong {
+  color: #53EF8F;
   font-weight: 800;
-  color: #58DF30;
-  text-shadow: 0 0 20px #58DF30;
+  text-shadow:
+      0 0 3px #53EF8F,
+      0 0 8px #39c26d,
+      0 0 15px #1a6b35;
 }
 
 .titleContainer h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #cfcfcf;
 }
 
 .titleContainer p {
-  margin-top: 20px;
-  line-height: 1.6;
+  margin-top: 10px;
+  line-height: 1.7;
   font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ----- FORM SECTION ----- */
 .accessContainer {
-  flex: 1;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  backdrop-filter: blur(10px);
+  flex: 0.9;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .accessTitle h1 {
   text-align: center;
   color: #ffffff;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .accessInputs {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
-}
-
-.accessInput {
-  width: 70%;
 }
 
 .accessInput span {
@@ -78,57 +100,74 @@
 }
 
 .accessInput input {
-  width: 100%;
-  padding: 10px 5px;
+  width: 95%;
+  padding: 12px 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
   color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.accessInput input:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(83, 239, 143, 0.4);
 }
 
 .accessInput input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* ----- BOTONES ----- */
 .accessButton {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 12px;
+  margin-top: 25px;
   align-items: center;
 }
 
-.accessButton span {
-  font-size: 14px;
+.accessButton a {
+  color: #53EF8F;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-.accessButton a {
-  color: #58DF30;
-  text-decoration: none;
+.accessButton a:hover {
+  color: #7bffb4;
 }
 
 .accessButton button {
-  background-color: #58DF30;
+  background-color: #53EF8F;
   color: black;
   font-weight: 700;
   border: none;
-  padding: 10px 25px;
-  border-radius: 3px;
+  padding: 12px 25px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease;
+  width: 60%;
 }
 
 .accessButton button:hover {
   background-color: #4ac428;
-  box-shadow: 0 0 10px #58DF30;
+  box-shadow: 0 0 12px #58DF30;
 }
 
 /* ----- RESPONSIVE ----- */
 @media (max-width: 900px) {
   .subContainer {
     flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .titleContainer {
+    padding-right: 0;
+    text-align: center;
   }
 
   .accessContainer {
@@ -136,19 +175,11 @@
     max-width: 400px;
   }
 
-  .titleContainer{
-    text-align: center;
-  }
-  
   .titleContainer h1 {
     font-size: 36px;
   }
 
   .titleContainer h2 {
     font-size: 20px;
-  }
-
-  .accessInput {
-    width: 90%;
   }
 }

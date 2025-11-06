@@ -3,6 +3,11 @@
     flex-direction: column;
     min-height: 100vh;
     background: #00080C;
+    background: radial-gradient(circle at 50% -20%, 
+        #00283b 15%,      /* Azul verdoso intermedio */
+        #00283b 40%,      /* Azul oscuro */
+        #000000 90%       /* Fondo completamente negro */
+    );
     color: #fff;
 }
 

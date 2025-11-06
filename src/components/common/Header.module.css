@@ -1,23 +1,36 @@
 .container {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    padding: 0 5%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 0 5%;
+}
+
+/* ---- Línea inferior animada tipo shimmer ---- */
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #58df30, transparent);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: shimmer 3s infinite linear;
 }
 
 .logo {
     font-size: 35px;
-    font-weight: 700;
+    font-weight: 800;
     color: #53EF8F;
     text-shadow:
-        0 0 5px #000000,  /* Sombra principal para el brillo */
-        0 0 10px #53EF8F,
-        0 0 20px #000000,
-        0 0 40px #53EF8F, /* Resplandor de color neón */
-        0 0 80px #000000;
+      0 0 3px #53EF8F,
+      0 0 8px #39c26d,
+      0 0 15px #1a6b35;
 }
 
 @media (max-width: 600px) {

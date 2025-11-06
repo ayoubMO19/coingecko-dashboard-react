@@ -3,12 +3,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: transparent;
+  gap: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
   color: white;
+  font-family: "Inter", system-ui, sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
+/* línea suave de luz */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #58df30, transparent);
+  opacity: 0.6;
+}
+
+/* Enlaces */
 .link {
   display: flex;
   align-items: center;
@@ -17,30 +34,53 @@
   color: rgba(255, 255, 255, 0.8);
   font-size: 16px;
   font-weight: 500;
-  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  position: relative;
 }
 
+/* Iconos */
 .link img {
   width: 28px;
-  filter: grayscale(100%) brightness(0.8);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
+/* Hover */
 .link:hover {
-  color: #58DF30;
-  text-shadow: 0 0 10px #58DF30, 0 0 30px #58DF30;
+  color: #58df30;
+  text-shadow: 0 0 8px #58df30, 0 0 20px #58df30;
+  transform: translateY(-2px);
 }
 
 .link:hover img {
-  filter: drop-shadow(0 0 6px #58DF30) brightness(1);
+  filter: drop-shadow(0 0 6px #58df30) brightness(1.1);
+  opacity: 1;
 }
 
-/* ---- Responsive ---- */
+/* Efecto de línea debajo del texto */
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #58df30;
+  box-shadow: 0 0 8px #58df30;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
-    height: auto;
     gap: 15px;
+    height: auto;
     padding: 20px 0;
   }
 
