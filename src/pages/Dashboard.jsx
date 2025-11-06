@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { account } from '../appwrite';
-import { logoutUser } from '../appwrite';
 import { processLogin } from '../services/authService';
 import { processGetGlobalInfo, processGetTopTenCoins } from '../services/coinService';
 import { formatNumber } from '../utils/formatters';
