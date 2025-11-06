@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import styles from './Hero.module.css';
 import { registerNewUser, loginUser, getCurrentUser } from '../../appwrite.js';
 
 const Hero = () => {
+    const navigate = useNavigate();
     const [isRegistering, setIsRegistering] = useState(false);
     const [formData, setFormData] = useState({
     email: '',
@@ -65,7 +67,9 @@ const Hero = () => {
                 // alerta de usuario logueado con éxito
                 await notify('success', 'Usuario logueado con éxito.');
                 // redirigir al dashboard
-                setTimeout(() => { window.location.href = '/dashboard' }, 800);
+                setTimeout(() => {
+                    navigate('/dashboard', { replace: true });
+                }, 800);                
                 return;
             }
             
@@ -75,7 +79,9 @@ const Hero = () => {
                 if (result.success) {
                     await notify('success', 'Usuario logueado con éxito.');
                     // redirigir al dashboard
-                    setTimeout(() => { window.location.href = '/dashboard' }, 800);
+                    setTimeout(() => {
+                        navigate('/dashboard', { replace: true });
+                    }, 800);         
                     return;
                 }
             }

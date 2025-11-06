@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { account } from '../appwrite';
 import { logoutUser } from '../appwrite';
 import { processLogin } from '../services/authService';
@@ -15,6 +16,7 @@ const VEXA_USERNAME = 'VEXA'
 const VEXA_PASSWORD = '1234'
 
 const Dashbaord = () => {
+    const navigate = useNavigate();
     const [criptoCoins, setCriptoCoins] = useState("-");
     const [marketCap, setMarketCap] = useState("-");
     const [volume24h, setVolume24h] = useState("-");
@@ -37,7 +39,9 @@ const Dashbaord = () => {
                 }
             } catch {
                 console.log('No hay sesión, redirigiendo...');
-                window.location.href = '/';
+                setTimeout(() => {
+                    navigate('/', { replace: true });
+                }, 800);
             }
         };
         checkSession();

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Client, Account, ID } from 'appwrite';
 const PROJECT_ID = import.meta.env.VITE_APPWRITE_PROJECT_ID;
 const ENDPOINT = import.meta.env.VITE_APPWRITE_ENDPOINT;
@@ -42,8 +43,11 @@ export const getCurrentUser = async () => {
 // Función para hacer logout
 export const logoutUser = async () => {
     try {
+
         await account.deleteSession('current');
-        window.location.href = '/';
+        setTimeout(() => {
+            useNavigate('/', { replace: true });
+        }, 800);
         return { success: true };
 
     } catch(error) {
