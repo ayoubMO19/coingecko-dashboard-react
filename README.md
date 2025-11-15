@@ -1,12 +1,13 @@
-# React + Vite
+🚀 VEXA Dashboard — React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and minimalist cryptocurrency dashboard built with React + Vite, designed to display real-time market data through a clean, data-driven interface.
+It features smooth UI interactions, a custom neon style, and integration with an external Node.js API.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✨ Features
+- 🔐 Authentication powered by Appwrite
+- 📊 Interactive dashboard with dynamic cards and charts
+- ⚡ Ultra-fast development with Vite
+- 🎨 Custom UI using CSS Modules (neon green + dark theme)
+- 🌐 Fetches data from a custom Node.js API
+- 📱 Fully responsive layout
+- 📈 Lightweight Charts for performant visualizations
