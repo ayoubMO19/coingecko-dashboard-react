@@ -1,3 +1,5 @@
+<img src="./src/assets/vexa-dash-banner.png"/>
+
 # 🚀 VEXA Dashboard — React + Vite
 
 A modern and minimalist cryptocurrency dashboard built with React + Vite, designed to display real-time market data through a clean, data-driven interface.
