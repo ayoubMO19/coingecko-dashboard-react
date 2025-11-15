@@ -79,7 +79,19 @@ npm run build
   - password: 12345678
 
 ## 🖼️ Screenshots
-![Login-desktop](./src/assets/screenshots/login.png) - ![Login-mobile](./src/assets/screenshots/login.png)
-![Register](./src/assets/screenshots/register.png)
-![Dashboard](./src/assets/screenshots/dashboard.png)
+<p align="center">
+  <img src="./src/assets/screenshots/login.png" alt="Login Desktop" width="45%" />
+  <img src="./src/assets/screenshots/login.png" alt="Login Mobile" width="25%" />
+</p>
+
+<p align="center">
+  <img src="./src/assets/screenshots/register.png" alt="Register Desktop" width="45%" />
+  <img src="./src/assets/screenshots/register-mobile.png" alt="Register Mobile" width="25%" />
+</p>
+
+<p align="center">
+  <img src="./src/assets/screenshots/dashboard.png" alt="Dashboard Desktop" width="45%" />
+  <img src="./src/assets/screenshots/dashboard-mobile.png" alt="Dashboard Mobile" width="25%" />
+</p>
+
 
