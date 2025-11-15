@@ -38,3 +38,35 @@ npm run dev
 # 5. Build for production
 npm run build
 ```
+
+## 🗂️ Project Structure
+```
+.
+├── public/                         # Static files
+├── src/
+│   ├── assets/                     # Images, icons, logos
+│   ├── components/
+│   │   ├── common/                 # Header, Footer, shared UI
+│   │   ├── dashboard/              # Dashboard cards & charts
+│   │   └── home/                   # Homepage components
+│   ├── pages/
+│   │   ├── Dashboard.jsx           # Main dashboard screen
+│   │   ├── Dashboard.module.css    # Dashboard styling
+│   │   └── Home.jsx                # Landing page
+│   ├── services/
+│   │   ├── api.js                  # API base configuration
+│   │   ├── authService.js          # Login / Register / Logout
+│   │   └── coinService.js          # Crypto data service
+│   ├── utils/
+│   │   └── formatters.js           # Data format helpers
+│   ├── App.jsx                     # Global routing
+│   ├── Global.module.css           # Global styles (background, fonts)
+│   ├── appwrite.js                 # Appwrite client setup
+│   └── main.jsx                    # React root render
+│
+├── eslint.config.js
+├── tailwind.config.js              # (optional, used for resets)
+├── vercel.json
+├── vite.config.js
+└── README.md
+```
