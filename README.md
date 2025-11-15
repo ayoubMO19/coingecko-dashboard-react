@@ -78,3 +78,8 @@ npm run build
   - email: test@vexa.com
   - password: 12345678
 
+## 🖼️ Screenshots
+![Login](./assets/screenshots/login.png)
+![Dashboard](./assets/screenshots/dashboard.png)
+![Charts](./assets/screenshots/charts.png)
+
