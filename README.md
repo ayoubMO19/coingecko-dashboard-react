@@ -95,5 +95,7 @@ npm run build
 |--------|--------|
 | <img src="./src/assets/screenshots/dashboard.png" width="450"/> | <img src="./src/assets/screenshots/dashboard-mobile.png" width="180"/> |
 
-
-
+## 📩 Contact
+- Ayoub Morghi
+- GitHub: https://github.com/ayoubMO19
+- LinkedIn: https://www.linkedin.com/in/ayoub-morghi-ouhda/
