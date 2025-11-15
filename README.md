@@ -11,3 +11,30 @@ It features smooth UI interactions, a custom neon style, and integration with an
 - 🌐 Fetches data from a custom Node.js API
 - 📱 Fully responsive layout
 - 📈 Lightweight Charts for performant visualizations
+
+## 🛠️ Tech Stack
+- React 18
+- Vite
+- Appwrite Auth
+- Lightweight Charts
+- CSS Modules
+- Node.js REST API
+- Vercel (hosting)
+
+##📦 Installation
+```
+# 1. Clone the repository
+git clone https://github.com/YOUR_REPO_HERE.git
+
+# 2. Install dependencies
+npm install
+
+# 3. Create your .env file
+# Add your APPWRITE_* variables here
+
+# 4. Run in development mode
+npm run dev
+
+# 5. Build for production
+npm run build
+```
