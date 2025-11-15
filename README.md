@@ -80,6 +80,6 @@ npm run build
 
 ## 🖼️ Screenshots
 ![Login](./assets/screenshots/login.png)
+![Register](./assets/screenshots/register.png)
 ![Dashboard](./assets/screenshots/dashboard.png)
-![Charts](./assets/screenshots/charts.png)
 
