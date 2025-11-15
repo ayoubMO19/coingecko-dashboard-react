@@ -73,7 +73,7 @@ npm run build
 
 ## 🔑 Live Demo
 ### 🌐 Production URL
-  👉 https://vexa-dash.vercel.app/
+  - 👉 https://vexa-dash.vercel.app/
 ### 👤 Test Account
   - email: test@vexa.com
   - password: 12345678
