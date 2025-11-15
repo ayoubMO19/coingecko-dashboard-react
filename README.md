@@ -81,7 +81,7 @@ npm run build
 ## 🖼️ Screenshots
 <p align="center">
   <img src="./src/assets/screenshots/login.png" alt="Login Desktop" width="45%" />
-  <img src="./src/assets/screenshots/login.png" alt="Login Mobile" width="25%" />
+  <img src="./src/assets/screenshots/login-mobile.png" alt="Login Mobile" width="25%" />
 </p>
 
 <p align="center">
