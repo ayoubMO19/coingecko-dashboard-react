@@ -1,4 +1,4 @@
-<img src="./src/assets/vexa-dash-banner.png"/>
+<img src="./src/assets/vexa-dash-banner.png" width="100%"/>
 
 # 🚀 VEXA Dashboard — React + Vite
 
