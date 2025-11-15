@@ -79,7 +79,7 @@ npm run build
   - password: 12345678
 
 ## 🖼️ Screenshots
-![Login](./assets/screenshots/login.png)
-![Register](./assets/screenshots/register.png)
-![Dashboard](./assets/screenshots/dashboard.png)
+![Login](./src/assets/screenshots/login.png)
+![Register](./src/assets/screenshots/register.png)
+![Dashboard](./src/assets/screenshots/dashboard.png)
 
