@@ -79,19 +79,21 @@ npm run build
   - password: 12345678
 
 ## 🖼️ Screenshots
-<p align="center" style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./src/assets/screenshots/login.png" width="45%" />
-  <img src="./src/assets/screenshots/login-mobile.png" width="25%" />
-</p>
 
-<p align="center" style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./src/assets/screenshots/register.png" alt="Register Desktop" width="45%" />
-  <img src="./src/assets/screenshots/register-mobile.png" alt="Register Mobile" width="25%" />
-</p>
+### 🔐 Login
+| Desktop | Mobile |
+|--------|--------|
+| <img src="./src/assets/screenshots/login.png" width="450"/> | <img src="./src/assets/screenshots/login-mobile.png" width="180"/> |
 
-<p align="center" style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./src/assets/screenshots/dashboard.png" alt="Dashboard Desktop" width="45%" />
-  <img src="./src/assets/screenshots/dashboard-mobile.png" alt="Dashboard Mobile" width="25%" />
-</p>
+### 📝 Register
+| Desktop | Mobile |
+|--------|--------|
+| <img src="./src/assets/screenshots/register.png" width="450"/> | <img src="./src/assets/screenshots/register-mobile.png" width="180"/> |
+
+### 📊 Dashboard
+| Desktop | Mobile |
+|--------|--------|
+| <img src="./src/assets/screenshots/dashboard.png" width="450"/> | <img src="./src/assets/screenshots/dashboard-mobile.png" width="180"/> |
+
 
 
