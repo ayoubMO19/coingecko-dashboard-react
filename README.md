@@ -70,3 +70,11 @@ npm run build
 ├── vite.config.js
 └── README.md
 ```
+
+## 🔑 Live Demo
+### 🌐 Production URL
+  👉 https://vexa-dash.vercel.app/
+### 👤 Test Account
+  - email: test@vexa.com
+  - password: 12345678
+
